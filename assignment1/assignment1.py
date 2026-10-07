@@ -68,3 +68,17 @@ def repeat(string, count):
     for i in range(count):
         result = result + string
     return result 
+
+def student_scores(mode, **kwargs):
+    if mode == "best":
+        best_name = ""
+        best_score = 0
+        for name, score in kwargs.items():
+            if score > best_score: 
+                best_score = score 
+                best_name = name
+        return best_name
+    elif mode == "mean":
+        return sum(kwargs.values())/len(kwargs)
+    
+
