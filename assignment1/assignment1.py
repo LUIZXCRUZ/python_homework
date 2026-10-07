@@ -1,19 +1,8 @@
 def hello():
     return "Hello!"
 
-print(hello())
-
 def greet(name):
     return f"Hello, {name}!"
-
-print(greet("James"))
-
-# def calc(a, b, operation = "multiply"):
-#     pass 
-
-#operation = "multiply" is a (default parameter as mentioned in 1.6)
-# If the caller leaves it out, it multiplies. 
-# Pass becomes a placeholder that doesn't anything quite yet 
 
 def calc(a, b, operation = "multiply"):
     try: 
@@ -91,3 +80,12 @@ def titleize (string):
         else: 
             result.append(word)    
     return " ".join(result)
+
+def hangman(secret, guess):
+    result = ""
+    for letter in secret:
+        if letter in guess: 
+            result = result + letter
+        else: 
+            result = result + "_"
+    return result 
