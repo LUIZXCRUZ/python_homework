@@ -62,3 +62,9 @@ def grade(*args):
             return "F"
     except TypeError:
         return "Invalid data was provided."
+
+def repeat(string, count):
+    result = ""
+    for i in range(count):
+        result = result + string
+    return result 
