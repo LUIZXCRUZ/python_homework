@@ -89,3 +89,18 @@ def hangman(secret, guess):
         else: 
             result = result + "_"
     return result 
+
+def pig_latin(text):
+    words = text.split()
+    result = []
+    for word in words: 
+        if word [0] in "aeiou":
+            result.append(word + "ay")
+        else: 
+            i = 0 
+            while word[i] not in "aeiou":
+                i = i + 1
+            if word [i] == "u" and word [i - 1] == "q":
+                i = i + 1 
+            result.append(word[i:] + word[:i] + "ay")
+    return " ".join(result)
