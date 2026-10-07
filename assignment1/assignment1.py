@@ -81,4 +81,13 @@ def student_scores(mode, **kwargs):
     elif mode == "mean":
         return sum(kwargs.values())/len(kwargs)
     
-
+def titleize (string):
+    little_words = ["a", "on", "an", "the", "of", "and", "is", "in"]
+    words = string.split()
+    result = []
+    for i, word in enumerate (words):
+        if i == 0 or i == len (words) -1 or word not in little_words: 
+            result.append(word.capitalize())
+        else: 
+            result.append(word)    
+    return " ".join(result)
